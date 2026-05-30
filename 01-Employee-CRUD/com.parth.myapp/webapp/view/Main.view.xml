@@ -1,0 +1,19 @@
+<mvc:View
+    controllerName="com.parth.myapp.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+
+    <!-- <Page title="Employee Form">
+	<content>
+		<VBox>
+			<Input id="NameInput" placeholder="Enter Name" />
+			<Input id="AgeInput" placeholder="Enter Name"/>
+			<Button text="Submit Details" press="onSave" />
+			<Button text="Clear Details" press="onClear" />
+		</VBox>
+			
+		
+	</content>
+</Page> -->
+
+</mvc:View>

@@ -1,0 +1,26 @@
+<mvc:View
+	controllerName="com.parth.myapp.controller.BindingEx"
+	displayBlock="true"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+    xmlns:f="sap.ui.layout.form">
+
+ <Page>
+    <content>
+        <Vbox class ="sapUiSmallMargin">
+            <Label text="Employee Name"/>
+
+            <Input value="{empName}"/>
+
+            <Label text="{empName}"></Label>
+        </Vbox>
+        <Button
+                    text="Change Name"
+                    press="onChangeName"/>
+
+            
+    </content>
+
+ </Page>
+
+</mvc:View>
