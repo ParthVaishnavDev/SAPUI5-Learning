@@ -1,0 +1,38 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+
+ 
+    <Dialog
+        title="Employee Details">
+
+        <content>
+
+            <VBox class="sapUiSmallMargin">
+
+                <Text text="Employee ID :"/>
+                <Text text="{id}"/>
+                <Text text="Name : Parth"/>
+                <Text text="{name}"/>
+                <Text text="City : "/>
+                <Text text="{city}"/>
+                <Text text="Department : "/>
+                <Text text="{dept}"/>
+                <Text text="Salary : "/>
+                <Text text="{salary}"/>
+
+            </VBox>
+
+        </content>
+
+        <buttons>
+
+            <Button
+                text="Close"
+                press="onCloseDialog"/>
+
+        </buttons>
+
+    </Dialog>
+
+</core:FragmentDefinition>

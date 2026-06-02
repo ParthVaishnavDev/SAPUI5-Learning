@@ -1,0 +1,157 @@
+<mvc:View
+    controllerName="com.parth.fragmentdemo.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <Page title="Employee Management System">
+
+        <content>
+
+            <Panel
+                headerText="Employee Registration Form"
+                class="sapUiSmallMargin">
+
+                <content>
+
+                    <VBox class="sapUiSmallMargin">
+
+                        <Label text="Employee ID"/>
+
+                        <Input
+                            id="empID"
+                            placeholder="Enter Employee ID"/>
+
+                        <Label text="Employee Name"/>
+
+                        <Input
+                            id="empName"
+                            placeholder="Enter Employee Name"/>
+
+                        <Label text="City"/>
+
+                        <Input
+                            id="empCity"
+                            placeholder="Enter City"/>
+
+                        <Label text="Department"/>
+
+                        <Input
+                            id="empDept"
+                            placeholder="Enter Department"/>
+
+                        <Label text="Salary"/>
+
+                        <Input
+                            id="empSalary"
+                            placeholder="Enter Salary"/>
+
+                    </VBox>
+
+                    <HBox
+                        class="sapUiSmallMarginTop"
+                        justifyContent="Center">
+
+                        <Button
+                            text="Add Employee"
+                            press="onAdd"/>
+
+                        <Button
+                            text="Update Employee"
+                            press="onUpdate"
+                            class="sapUiTinyMarginBegin"/>
+
+                        <Button
+                            text="Clear"
+                            press="onClear"
+                            class="sapUiTinyMarginBegin"/>
+
+                    </HBox>
+
+                </content>
+
+            </Panel>
+
+            <Panel
+                headerText="Employee Details"
+                class="sapUiSmallMargin">
+
+                <content>
+
+                    <Table items="{/employees}">
+
+                        <columns>
+
+                            <Column>
+                                <Text text="ID"/>
+                            </Column>
+
+                            <Column>
+                                <Text text="Name"/>
+                            </Column>
+
+                            <Column>
+                                <Text text="City"/>
+                            </Column>
+
+                            <Column>
+                                <Text text="Department"/>
+                            </Column>
+
+                            <Column>
+                                <Text text="Salary"/>
+                            </Column>
+
+                            <Column>
+                                <Text text="Action"/>
+                            </Column>
+
+                        </columns>
+
+                        <items>
+
+                            <ColumnListItem>
+
+                                <cells>
+
+                                    <Text text="{id}"/>
+                                    <Text text="{name}"/>
+                                    <Text text="{city}"/>
+                                    <Text text="{dept}"/>
+                                    <Text text="{salary}"/>
+
+                                    <HBox>
+
+                                        <Button
+                                            text="Edit"
+                                            type="Emphasized"
+                                            press="onEdit"/>
+
+                                        <Button
+                                            text="Delete"
+                                            type="Reject"
+                                            press="onDelete"
+                                            class="sapUiTinyMarginBegin"/>
+                                        <Button
+                                            text="View"
+                                            type="Emphasized"
+                                            press="onOpenDialog"
+                                            class="sapUiTinyMarginBegin"/>
+
+                                    </HBox>
+
+                                </cells>
+
+                            </ColumnListItem>
+
+                        </items>
+
+                    </Table>
+
+                </content>
+
+            </Panel>
+
+        </content>
+
+    </Page>
+
+</mvc:View>
