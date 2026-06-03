@@ -1,0 +1,36 @@
+<mvc:View
+	controllerName="com.parth.formatterdemo.controller.Detail"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+
+	<Page
+		title="Employee Details"
+		showNavButton="true"
+		navButtonPress="onNavBack">
+		<content>
+			<VBox class="sapUiSmallMargin">
+				<Label text="Employee ID"/>
+				<Text text="{id}"/>
+
+				<Label text="Employee Name" class="sapUiSmallMarginTop"/>
+				<Text text="{name}"/>
+
+				<Label text="Salary" class="sapUiSmallMarginTop"/>
+				<Text text="{
+					path: 'salary',
+					formatter: '.formatter.formatedStatus'
+				}"/>
+
+				<Label text="Salary Status" class="sapUiSmallMarginTop"/>
+				<Text text="{
+					path: 'salary',
+					formatter: '.formatter.salaryStatus'
+				}"/>
+
+				<Label text="Category" class="sapUiSmallMarginTop"/>
+				<Text text="{= ${salary} > 40000 ? 'VIP' : 'Local' }"/>
+			</VBox>
+		</content>
+	</Page>
+
+</mvc:View>

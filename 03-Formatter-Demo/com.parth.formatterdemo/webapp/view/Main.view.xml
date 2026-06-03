@@ -1,0 +1,102 @@
+<mvc:View
+	controllerName="com.parth.formatterdemo.controller.Main"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m">
+
+	<Page title="Formatter Demo">
+		<content>
+			<VBox class="sapUiSmallMargin">
+
+				<Panel headerText="Salary Formatters">
+					<Table items="{/employees}">
+						<columns>
+							<Column>
+								<Text text="Name"/>
+							</Column>
+							<Column>
+								<Text text="Salary"/>
+							</Column>
+							<Column>
+								<Text text="Status"/>
+							</Column>
+							<Column>
+								<Text text="Formatted Amount"/>
+							</Column>
+							<Column>
+								<Text text="With Expression"/>
+							</Column>
+						</columns>
+						<items>
+							<ColumnListItem>
+								<cells>
+									<Text text="{name}"/>
+									<Text text="{salary}"/>
+									<Text text="{
+										path: 'salary',
+										formatter: '.formatter.salaryStatus'
+									}"/>
+									<Text text="{
+										path: 'salary',
+										formatter: '.formatter.formatedStatus'
+									}"/>
+									<Text text="{= ${salary} > 40000 ? 'VIP' : 'Local' }"/>
+								</cells>
+							</ColumnListItem>
+						</items>
+					</Table>
+				</Panel>
+
+				<Panel headerText="Employee Search &amp; Navigation">
+					<content>
+						<Input
+							id="int"
+							class="sapUiSmallMarginBottom"
+							placeholder="Department"
+							showValueHelp="true"
+							valueHelpRequest="onInput"/>
+						<SearchField
+							class="sapUiSmallMarginBottom"
+							liveChange="onSearch"
+							placeholder="Search by name"/>
+						<Table
+							id="empTable"
+							items="{/employees}">
+							<columns>
+								<Column>
+									<Text text="ID"/>
+								</Column>
+								<Column>
+									<Text text="Name"/>
+								</Column>
+								<Column>
+									<Text text="Salary"/>
+								</Column>
+								<Column>
+									<Text text="Action"/>
+								</Column>
+							</columns>
+							<items>
+								<ColumnListItem>
+									<cells>
+										<Text text="{id}"/>
+										<Text text="{name}"/>
+										<Text text="{
+											path: 'salary',
+											formatter: '.formatter.formatedStatus'
+										}"/>
+										<Button
+											text="View"
+											type="Emphasized"
+											press="onView"/>
+									</cells>
+								</ColumnListItem>
+							</items>
+						</Table>
+					</content>
+				</Panel>
+
+			</VBox>
+		</content>
+	</Page>
+
+</mvc:View>
